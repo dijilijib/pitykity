@@ -2,24 +2,22 @@
 
 void setup() {
     Serial.begin(115200);
-    // Led setup
-    //led_pin_setup();
-    // wifi setup
+    thingsboard_setup();
+    led_pin_setup();
     connecting_wifi();
-    // uzaklik sensoru setup
-    ///ditance_sensor_setup();
+    ditance_sensor_setup();
     //set_buzzer();
-    //step_set();
+    step_set();
     set_web_server();
+    set_eprom();
 }
 
 void loop() {
-    // saati cekmek icin
-    // connect_wifi.h 
-    // get_time_c();
-    // uzaklik senseru
-    // led_distance(ditance_sensor_get());
+    get_time_c();
+    led_distance(ditance_sensor_get());
     // use_buzzer();
     get_web_server();
+    get_eprom();
+    thingsboard_loop();
     delay(1000);
 }
