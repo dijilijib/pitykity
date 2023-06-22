@@ -2,22 +2,22 @@
 
 void setup() {
     Serial.begin(115200);
+    // Internet baglatisi wifi sifresi ve mevcut default
+    // durumlar gecerlidir
     thingsboard_setup();
     led_pin_setup();
-    connecting_wifi();
     ditance_sensor_setup();
     //set_buzzer();
     step_set();
     set_web_server();
-    set_eprom();
+    file_setup();
 }
 
 void loop() {
-    get_time_c();
-    led_distance(ditance_sensor_get());
     // use_buzzer();
+    // Mesafeye gore ledleri yakar ve sondurur
+    led_distance(ditance_sensor_get());
     get_web_server();
-    get_eprom();
     thingsboard_loop();
     delay(1000);
 }

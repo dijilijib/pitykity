@@ -1,5 +1,4 @@
 #include "pitykity.h"
-
 // Define NTP Client to get time
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, "pool.ntp.org");

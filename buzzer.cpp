@@ -7,11 +7,12 @@ void setup_buzzer()
 
 void use_buzzer()
 {
-    int z;
-
-    z = 0;
-    if (z)
-        digitalWrite(PIN_BUZZER, HIGH);
-    else 
-        digitalWrite(PIN_BUZZER, LOW);
+    tone(buzzer, 50);
+    delay(10);
+    tone(buzzer, 150);
+    delay(10);
+    tone(buzzer, 50);
+    delay(10);
+    tone(buzzer, 150);
+    delay(10);
 }

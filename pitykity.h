@@ -10,6 +10,7 @@
 
 #include <ThingsBoard.h>
 #include <array>
+
 #if defined(ESP8266)
   #include <ESP8266WiFi.h>
   #define THINGSBOARD_ENABLE_PROGMEM 0
@@ -23,15 +24,17 @@
 
 void set_web_server();
 void get_web_server();
+//
+String get_web_clock_night()
 
 //////////////////////////////Buzzer////////////////////////////////////
-#define PIN_BUZZER 199
+#define PIN_BUZZER 33
 void setup_buzzer();
 void use_buzzer();
 /////////////////////////////Connect_wifi///////////////////////////////
-void connecting_wifi();
+// void connecting_wifi();
 /////////////////////////////Time///////////////////////////////////////
-void get_time_c();
+// void get_time_c();
 /////////////////////////////Distance_sensor////////////////////////////
 #define SES_HIZI 0.034
 void ditance_sensor_setup();
@@ -51,31 +54,11 @@ void led_distance(int);
 #define IN4 17 
 void step_set();
 void step_get();
-/////////////////////////////Eprom////////////////////////////
-class eprom 
-{
-  public:
-  void setup();
-  // set
-  eprom(uint8_t address);
-  void time1(uint8_t hours, uint8_t minutes);
-  void time2(uint8_t hours, uint8_t minutes);
-  void kontroller(bool kontrol1, bool kontrol2);
-  void mamaMiktari(uint8_t miktar);
-  // get
-  int Saat1();
-  int Dakika1();
-  int Saat2();
-  int Dakika2();
-  bool Kontrol1();
-  bool Kontrol2();
-  int Mama();
-  private:
-  uint16_t _address;
+/////////////////////////////Creating File////////////////////////////
+void file_setup();
+void write_file(const char *line);
+void read_file();
 
-};
-void set_eprom();
-void get_eprom();
 /////////////////////////////Things////////////////////////////
 
 // Function declarations

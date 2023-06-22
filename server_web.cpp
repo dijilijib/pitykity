@@ -114,16 +114,37 @@ void handleRoot() {
   server.send(200, "text/html", html);
 }
 
+String get_web_hour_night()
+{
+    return (server.arg("saat1"));
+}
+
+String get_web_minute_night()
+{
+    return (server.arg("dakika1"));
+}
+
+String get_web_hour_morning()
+{
+    return (server.arg("saat2"));
+}
+
+String get_web_food_value()
+{
+    return (server.arg("miktar"));
+}
+
+int isMornign()
+{
+    return (server.arg("sabahKontrol") ? 1 : 0);
+}
+
+int isNight()
+{
+    return (server.arg("aksamKontrol") ? 1 : 0);
+}
 
 void handleKaydet() {
-    String saat1 = server.arg("saat1");
-    String dakika1 = server.arg("dakika1");
-    String saat2 = server.arg("saat2");
-    String dakika2 = server.arg("dakika2");
-    String miktar = server.arg("miktar");
-    String aksamKontrol = server.arg("aksamKontrol");
-    String sabahKontrol = server.arg("sabahKontrol");
-
     Serial.print("Akşam Mama Saati: ");
     Serial.print(saat1);
     Serial.print(":");
