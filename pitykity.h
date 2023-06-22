@@ -1,0 +1,43 @@
+#ifndef PITYKITY_H
+#define PITYKITY_H
+
+#include <Arduino.h>
+#include <WebServer.h>
+#include <WiFi.h>
+#include <WiFiUdp.h>
+#include <NTPClient.h>
+
+////////////////////////////WEB SERVER ////////////////////////////
+
+void set_web_server();
+void get_web_server();
+
+//////////////////////////////Buzzer////////////////////////////////////
+#define PIN_BUZZER 199
+void setup_buzzer();
+void use_buzzer();
+/////////////////////////////Connect_wifi///////////////////////////////
+void connecting_wifi();
+/////////////////////////////Time///////////////////////////////////////
+void get_time_c();
+/////////////////////////////Distance_sensor////////////////////////////
+#define SES_HIZI 0.034
+void ditance_sensor_setup();
+int ditance_sensor_get();
+/////////////////////////////Distance_sensor////////////////////////////
+#define LED_kirmizi 27
+#define LED_mavi1 26
+#define LED_mavi2 25
+#define LED_mavi3 32
+
+void led_pin_setup();
+void led_distance(int);
+/////////////////////////////Step_motor////////////////////////////
+#define IN1 19
+#define IN2 18 
+#define IN3 5 
+#define IN4 17 
+void step_set();
+void step_get();
+////////////////////////////////////////////////////////////////////
+#endif // !PITYKITY_H
